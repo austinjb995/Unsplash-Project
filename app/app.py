@@ -2,10 +2,10 @@ from flask import Flask, render_template, request
 import requests
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 # Unsplash API key (replace with your own key)
-UNSPLASH_ACCESS_KEY = 'RvZGCn5qDRsGG5bfAQiMAROEWtr93OuDAMqu5uwNPN8'
+UNSPLASH_ACCESS_KEY = your_api_key
 
 @app.route('/', methods=['GET'])
 def index():
