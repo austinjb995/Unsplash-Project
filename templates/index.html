@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Unsplash Image Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Optional inline fallback styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        form {
+            margin: 20px auto;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 8px 12px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            border-radius: 8px;
+            max-width: 350px;
+            max-height: 350px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="topnav">
+        <a href="/">Home</a>
+    </div>
+
+    <h1>Search Unsplash Images</h1>
+
+    <form method="post">
+        <input type="text" name="tags" placeholder="Enter search tags" value="{{ query }}" autofocus />
+        <button type="submit">Search</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if images %}
+        <h2>Results for "{{query }}"</h2>
+    {% endif %}
+
+    <!-- This div is used by JS to inject images -->
+    <div id="image-container" class="image-grid"></div>
+
+    
+    
+{% if images is defined and query is defined %}
+  <script>
+    let imageData = {{ images | tojson | safe }};
+    let query = {{ query | tojson | safe }};
+  </script>
+{% else %}
+  <script>
+    let imageData = [];
+    let query = "";
+  </script>
+{% endif %}
+
+<!-- Load JS last -->
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
+
