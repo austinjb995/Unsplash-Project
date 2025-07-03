@@ -1,0 +1,23 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+webdev/                 # your venv directory
+
+# Ignore OS metadata
+.DS_Store
+
+# Ignore environment and secrets
+.env
+.flaskenv
+
+# Ignore IDE configs
+.vscode/
+.idea/
+
+# Ignore log and temp files
+*.log
+*.tmp
+
+# Ignore compiled assets
+/static/build/
+
