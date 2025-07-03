@@ -1,4 +1,4 @@
-#!/home/austin/Documents/webdev_project/webdev/bin/python3
+#!/Users/austinbell/Documents/Unsplash-Project/webdev/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys

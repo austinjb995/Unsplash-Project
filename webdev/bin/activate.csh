@@ -9,17 +9,17 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV /home/austin/Documents/webdev_project/webdev
+setenv VIRTUAL_ENV /Users/austinbell/Documents/Unsplash-Project/webdev
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/"bin":$PATH"
+setenv VIRTUAL_ENV_PROMPT webdev
 
 
 set _OLD_VIRTUAL_PROMPT="$prompt"
 
 if (! "$?VIRTUAL_ENV_DISABLE_PROMPT") then
-    set prompt = '(webdev) '"$prompt"
-    setenv VIRTUAL_ENV_PROMPT '(webdev) '
+    set prompt = "("webdev") $prompt:q"
 endif
 
 alias pydoc python -m pydoc

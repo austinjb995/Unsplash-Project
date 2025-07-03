@@ -71,8 +71,11 @@
     {% endif %}
 
     <!-- This div is used by JS to inject images -->
-    <div id="image-container" class="image-grid"></div>
-
+	<div class="gallery">
+    	{% for img in images %}
+        	<img src="{{ img }}" alt="Unsplash image">
+    	{% endfor %}
+	</div>	
     
     
 {% if images is defined and query is defined %}
