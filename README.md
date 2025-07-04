@@ -1,3 +1,7 @@
+# NOTE
+
+I will not be working on this any further. This was made purely as a "Professional" version of my Personal Flask Website. I do not wish to continue to work on this anymore. I will be working on my personal website instead for fun as I enjoy it more.
+
 # Unsplash Image Search Web App
 
 A Flask-based web application that allows users to search for high-quality images from the [Unsplash API](https://unsplash.com/developers). Built for quick deployment, lightweight interaction, and demonstration of client-server rendering workflows.
